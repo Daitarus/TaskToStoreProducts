@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskToStoreFactoryProducts", "TaskToStoreFactoryProducts\TaskToStoreFactoryProducts.csproj", "{42D0D998-3492-451E-A04E-85B5AC8EE79B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskToStoreProducts", "TaskToStoreFactoryProducts\TaskToStoreProducts.csproj", "{42D0D998-3492-451E-A04E-85B5AC8EE79B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigHandler", "ConfigHandler\ConfigHandler.csproj", "{10AEB300-0788-4F92-8CF8-045BCAAD5D67}"
 EndProject

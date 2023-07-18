@@ -13,4 +13,8 @@
     <ProjectReference Include="..\RepositoryDB\RepositoryDB.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataBase\" />
+  </ItemGroup>
+
 </Project>
