@@ -1,5 +1,4 @@
-﻿using RepositoryDB;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +9,7 @@ namespace TaskToStoreProducts.DataBase.Repositories
 {
     internal class AttributeRepository : Repository<AttributeEntity>
     {
-        public AttributeRepository(ProductsDataBase dataBase) : base(dataBase) 
+        public AttributeRepository(ProductsDB dataBase) : base(dataBase) 
         { 
 
         }

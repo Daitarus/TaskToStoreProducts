@@ -7,8 +7,8 @@ using TaskToStoreProducts.DataBase.Entities;
 
 namespace TaskToStoreProducts.DataBase.Repositories
 {
-    internal class ObjectRepository : Repository<ObjectEntity>
+    internal class ObjectRelationshipRepository : Repository<ObjectRelationshipEntity>
     {
-        public ObjectRepository(ProductsDB dataBase) : base(dataBase) { }
+        public ObjectRelationshipRepository(ProductsDB database) : base(database) { }
     }
 }

@@ -9,12 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConfigHandler\ConfigHandler.csproj" />
-    <ProjectReference Include="..\RepositoryDB\RepositoryDB.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DataBase\" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.9" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
   </ItemGroup>
 
 </Project>

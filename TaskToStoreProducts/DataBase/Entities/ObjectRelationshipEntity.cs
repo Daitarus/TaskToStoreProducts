@@ -1,5 +1,4 @@
-﻿using RepositoryDB;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace TaskToStoreProducts.DataBase.Entities
 {
-    [Table("ObjectAttributeRelationships")]
-    internal class ObjectAttributeRelationship : Entity
+    [Table("ObjectRelationships")]
+    internal class ObjectRelationshipEntity : Entity
     {
         [Column("idparent")]
         [Required]
@@ -25,7 +24,7 @@ namespace TaskToStoreProducts.DataBase.Entities
         [Required]
         public string LinkName { get; set; }
 
-        public ObjectAttributeRelationship(int idParant, int idChild, string linkName)
+        public ObjectRelationshipEntity(int idParant, int idChild, string linkName)
         {
             IdParant = idParant;
             IdChild = idChild;
