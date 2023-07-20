@@ -56,7 +56,31 @@ namespace TaskToStoreFactoryProducts
 
         private void AddEntityButton_Click(object sender, EventArgs e)
         {
-
+            AddBehavior addBehavior = new AddBehavior(dbBehavior);
+            switch (entitiesAddTabControl.SelectedIndex)
+            {
+                case 0:
+                    {
+                        addBehavior.TryAddObjectEntity(typeObjectTextBox.Text, productObjectTextBox.Text);
+                        break;
+                    }
+                case 1:
+                    {
+                        addBehavior.TryAddAttributeEntity(
+                            objectIdAttributeTextBox.Text,
+                            nameAttributeTextBox.Text,
+                            valueAttributeTextBox.Text);
+                        break;
+                    }
+                case 2:
+                    {
+                        addBehavior.TryAddObjectRelationshipEntity(
+                            parentIdObjectRelationshipTextBox.Text,
+                            childIdObjectRelationshipTextBox.Text,
+                            linkNameObjectRelationshipTextBox.Text);
+                        break;
+                    }
+            }
         }
     }
 }

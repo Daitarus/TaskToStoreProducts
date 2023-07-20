@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -6,13 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TaskToStoreProducts.DataBase;
+using TaskToStoreProducts.DataBase.Entities;
+using TaskToStoreProducts.DataBase.Repositories;
 
 namespace TaskToStoreProducts.DataBaseBehavior
 {   
     internal class DbBehavior : IDisposable
     {
         private Action<string> printSystemMessageCallback;
-        private ProductDB? database = null;
+        public ProductDB? database { get; private set; }
         public DbBehavior(Action<string> printSystemMessageCallback)
         {
             this.printSystemMessageCallback = printSystemMessageCallback;
@@ -47,6 +51,52 @@ namespace TaskToStoreProducts.DataBaseBehavior
             else
                 printSystemMessageCallback("Ошибка: Строка для подключения к базе данных не получена из конфигурационного файла!");
             return result;
+        }
+
+        public bool IsArgumentNullOrEmpty(params string[] arguments)
+        {
+            bool result = false;
+            foreach (var arument in arguments)
+            {
+                result = result || String.IsNullOrEmpty(arument);
+            }
+            return result;
+        }
+        public bool IsArgumentNullOrEmptyWithPrintError(params string[] arguments)
+        {
+            bool result = IsArgumentNullOrEmpty(arguments);
+            if(result)
+                printSystemMessageCallback("Ошибка: Должны быть заполнены все поля!");
+            return result;
+        }
+        public bool IsDataBaseNullWithPrintError()
+        {
+            bool result = database == null;
+            if(result)
+                printSystemMessageCallback("Ошибка: Действие невозможно, база данных не подключена!");
+            return result;
+        }
+        public bool TryParseToId(string str, out long id)
+        {
+            bool result = long.TryParse(str, out id);
+            if(!result)
+                printSystemMessageCallback("Ошибка: Невозможно преобразовать строку в Id");
+            return result;
+        }
+        public bool TrySaveChangeIntoDB(AbstractRepository repository)
+        {
+            try
+            {
+                repository.SaveChanges();
+                printSystemMessageCallback("База данных успешно изменена...");
+                return true;
+            }
+            catch (DbUpdateException ex)
+            {
+                //TODO logger
+                printSystemMessageCallback("Ошибка: Сохранение изменений базы данных не выполнено!");
+                return false;
+            }
         }
 
         public void Dispose()

@@ -3,13 +3,9 @@ using TaskToStoreProducts.DataBase.Entities;
 
 namespace TaskToStoreProducts.DataBase.Repositories
 {
-    public class Repository<T> where T : Entity
+    public class Repository<T> : AbstractRepository where T : Entity 
     {
-        protected DB database;
-        public Repository(DB database)
-        {
-            this.database = database;
-        }
+        public Repository(DB database) : base(database) { }
 
         public T? SelectForId(uint id)
         {
