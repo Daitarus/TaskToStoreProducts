@@ -153,6 +153,7 @@
             AddEntityButton.TabIndex = 0;
             AddEntityButton.Text = "Добавить";
             AddEntityButton.UseVisualStyleBackColor = true;
+            AddEntityButton.Click += AddEntityButton_Click;
             // 
             // updateTabPage
             // 

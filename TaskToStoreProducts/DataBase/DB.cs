@@ -16,17 +16,6 @@ namespace TaskToStoreProducts.DataBase
 
             WasCreated = Database.EnsureCreated();
         }
-        public DB(string connectionString, string createTablesScript)
-        {
-            if(String.IsNullOrEmpty(connectionString))
-                throw new ArgumentNullException(nameof(connectionString));
-            ConnectionString = connectionString;
-
-            WasCreated = Database.EnsureCreated();
-
-            if (WasCreated && !String.IsNullOrEmpty(createTablesScript))
-                Database.ExecuteSqlRaw(createTablesScript);
-        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

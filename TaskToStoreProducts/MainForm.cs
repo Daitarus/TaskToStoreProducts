@@ -53,5 +53,10 @@ namespace TaskToStoreFactoryProducts
         {
 
         }
+
+        private void AddEntityButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

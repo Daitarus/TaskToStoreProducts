@@ -5,26 +5,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace TaskToStoreProducts.DataBase.Entities
 {
     [Table("Attributes")]
     internal class AttributeEntity : Entity
     {
-        [Column("name")]
+        [ForeignKey("OwningObjectEntity")]
+        [Required]
+        public long ObjectId;
+        public ObjectEntity OwningObjectEntity { get; set; }
+
         [MaxLength(50)]
         [Required]
         public string Name { get; set; }
 
-        [Column("value")]
         [MaxLength(50)]
         [Required]
         public string Value { get; set; }
-
-        public AttributeEntity(string name, string value)
-        {
-            Name = name;
-            Value = value;
-        }
     }
 }

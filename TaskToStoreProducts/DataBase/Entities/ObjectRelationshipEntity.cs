@@ -11,24 +11,18 @@ namespace TaskToStoreProducts.DataBase.Entities
     [Table("ObjectRelationships")]
     internal class ObjectRelationshipEntity : Entity
     {
-        [Column("idparent")]
+        [ForeignKey("ParentObjectEntity")]
         [Required]
-        public int IdParant { get; set; }
+        public long ParentId { get; set; }
+        public ObjectEntity ParentObjectEntity { get; set; }
 
-        [Column("idchild")]
+        [ForeignKey("ChildObjectEntity")]
         [Required]
-        public int IdChild { get; set; }
+        public long ChildId { get; set; }
+        public ObjectEntity ChildObjectEntity { get; set; }
 
-        [Column("linkname")]
         [MaxLength(100)]
         [Required]
         public string LinkName { get; set; }
-
-        public ObjectRelationshipEntity(int idParant, int idChild, string linkName)
-        {
-            IdParant = idParant;
-            IdChild = idChild;
-            LinkName = linkName;
-        }
     }
 }
