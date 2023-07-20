@@ -61,23 +61,59 @@ namespace TaskToStoreFactoryProducts
             {
                 case 0:
                     {
-                        addBehavior.TryAddObjectEntity(typeObjectTextBox.Text, productObjectTextBox.Text);
+                        addBehavior.TryAddObjectEntity(
+                            typeObjectAddTextBox.Text,
+                            productObjectAddTextBox.Text);
                         break;
                     }
                 case 1:
                     {
                         addBehavior.TryAddAttributeEntity(
-                            objectIdAttributeTextBox.Text,
-                            nameAttributeTextBox.Text,
-                            valueAttributeTextBox.Text);
+                            objectIdAttributeAddTextBox.Text,
+                            nameAttributeAddTextBox.Text,
+                            valueAttributeAddTextBox.Text);
                         break;
                     }
                 case 2:
                     {
                         addBehavior.TryAddObjectRelationshipEntity(
-                            parentIdObjectRelationshipTextBox.Text,
-                            childIdObjectRelationshipTextBox.Text,
-                            linkNameObjectRelationshipTextBox.Text);
+                            parentIdObjectRelationshipAddTextBox.Text,
+                            childIdObjectRelationshipAddTextBox.Text,
+                            linkNameObjectRelationshipAddTextBox.Text);
+                        break;
+                    }
+            }
+        }
+
+        private void UpdateEntityButton_Click(object sender, EventArgs e)
+        {
+            UpdateBehavior updateBehavior = new UpdateBehavior(dbBehavior);
+            switch (entitiesUpdateTabControl.SelectedIndex)
+            {
+                case 0:
+                    {
+                        updateBehavior.TryUpdateObjectEntity(
+                            idObjectUpdateTextBox.Text,
+                            typeObjectUpdateTextBox.Text,
+                            productObjectUpdateTextBox.Text);
+                        break;
+                    }
+                case 1:
+                    {
+                        updateBehavior.TryUpdateAttributeEntity(
+                            idAttributeUpdateTextBox.Text,
+                            objectIdAttributeUpdateTextBox.Text,
+                            nameAttributeUpdateTextBox.Text,
+                            valueAttributeUpdateTextBox.Text);
+                        break;
+                    }
+                case 2:
+                    {
+                        updateBehavior.TryUpdateObjectRelationshipEntity(
+                            idObjectRelationshipUpdateTextBox.Text,
+                            parentIdObjectRelationshipUpdateTextBox.Text,
+                            childIdObjectRelationshipUpdateTextBox.Text,
+                            linkNameObjectRelationshipUpdateTextBox.Text);
                         break;
                     }
             }

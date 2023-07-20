@@ -19,9 +19,6 @@ namespace TaskToStoreProducts.DataBase
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ObjectRelationshipEntity>()
-                .HasKey(x => new { x.ParentId, x.ChildId });
-
-            modelBuilder.Entity<ObjectRelationshipEntity>()
                 .HasOne(x => x.ParentObjectEntity)
                 .WithMany(z => z.ParentObjectRelationshipEntities)
                 .HasForeignKey(x => x.ParentId)

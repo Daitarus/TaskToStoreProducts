@@ -50,6 +50,7 @@ namespace TaskToStoreProducts.DataBaseBehavior
             if (!dbBehavior.IsArgumentNullOrEmptyWithPrintError(parentIdStr, childIdStr, linkName)
                 && dbBehavior.TryParseToId(parentIdStr, out parentId)
                 && dbBehavior.TryParseToId(childIdStr, out childId)
+                && !dbBehavior.IsIdsEqualWithPrintError(parentId, childId)
                 && !dbBehavior.IsDataBaseNullWithPrintError())
             {
                 ObjectRelationshipEntity objectRelationshipEntity = new ObjectRelationshipEntity()

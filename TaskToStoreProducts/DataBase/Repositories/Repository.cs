@@ -7,7 +7,7 @@ namespace TaskToStoreProducts.DataBase.Repositories
     {
         public Repository(DB database) : base(database) { }
 
-        public T? SelectForId(uint id)
+        public T? SelectForId(long id)
         {
             return database.Find<T>(id);
         }

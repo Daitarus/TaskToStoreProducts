@@ -31,33 +31,58 @@
             treeView1 = new TreeView();
             dbFunctionTabControl = new TabControl();
             addTabPage = new TabPage();
+            addAtteintionLabel = new Label();
             entitiesAddTabControl = new TabControl();
             objectTabPage = new TabPage();
-            productObjectTextBox = new TextBox();
-            typeObjectTextBox = new TextBox();
-            ProductObjectLabel = new Label();
-            TypeObjectLabel = new Label();
+            productObjectAddTextBox = new TextBox();
+            typeObjectAddTextBox = new TextBox();
+            ProductObjectAddLabel = new Label();
+            TypeObjectAddLabel = new Label();
             attributeTabPage = new TabPage();
-            objectIdAttributeTextBox = new TextBox();
-            ObjectIdAttributeLabel = new Label();
-            valueAttributeTextBox = new TextBox();
-            nameAttributeTextBox = new TextBox();
-            ValueAttributeLabel = new Label();
-            NameAttributeLabel = new Label();
+            objectIdAttributeAddTextBox = new TextBox();
+            ObjectIdAttributeAddLabel = new Label();
+            valueAttributeAddTextBox = new TextBox();
+            nameAttributeAddTextBox = new TextBox();
+            ValueAttributeAddLabel = new Label();
+            NameAttributeAddLabel = new Label();
             relationshipTabPage = new TabPage();
-            parentIdObjectRelationshipTextBox = new TextBox();
-            parentIdObjectRelationshipLabel = new Label();
-            linkNameObjectRelationshipTextBox = new TextBox();
-            childIdObjectRelationshipTextBox = new TextBox();
-            linkNameObjectRelationshipLabel = new Label();
-            childIdObjectRelationshipLabel = new Label();
+            parentIdObjectRelationshipAddTextBox = new TextBox();
+            parentIdObjectRelationshipAddLabel = new Label();
+            linkNameObjectRelationshipAddTextBox = new TextBox();
+            childIdObjectRelationshipAddTextBox = new TextBox();
+            linkNameObjectRelationshipAddLabel = new Label();
+            childIdObjectRelationshipAddLabel = new Label();
             label2 = new Label();
             AddEntityButton = new Button();
             updateTabPage = new TabPage();
-            entityUpdateTabControl = new TabControl();
+            updateAtteintionLabel1 = new Label();
+            updateAtteintionLabel2 = new Label();
+            entitiesUpdateTabControl = new TabControl();
             tabPage1 = new TabPage();
+            idObjectUpdateTextBox = new TextBox();
+            idObjectUpdateLabel = new Label();
+            productObjectUpdateTextBox = new TextBox();
+            typeObjectUpdateTextBox = new TextBox();
+            productObjectUpdateLabel = new Label();
+            typeObjectUpdateLabel = new Label();
             tabPage2 = new TabPage();
+            objectIdAttributeUpdateTextBox = new TextBox();
+            objectIdAttributeUpdateLabel = new Label();
+            idAttributeUpdateTextBox = new TextBox();
+            idAttributeUpdateLabel = new Label();
+            valueAttributeUpdateTextBox = new TextBox();
+            nameAttributeUpdateTextBox = new TextBox();
+            valueAttributeUpdateLabel = new Label();
+            nameAttributeUpdateLabel = new Label();
             tabPage3 = new TabPage();
+            parentIdObjectRelationshipUpdateTextBox = new TextBox();
+            parentIdObjectRelationshipUpdateLabel = new Label();
+            idObjectRelationshipUpdateTextBox = new TextBox();
+            idObjectRelationshipUpdateLabel = new Label();
+            linkNameObjectRelationshipUpdateTextBox = new TextBox();
+            childIdObjectRelationshipUpdateTextBox = new TextBox();
+            linkNameObjectRelationshipUpdateLabel = new Label();
+            childIdObjectRelationshipUpdateLabel = new Label();
             label3 = new Label();
             UpdateEntityButton = new Button();
             deleteTabPage = new TabPage();
@@ -71,7 +96,6 @@
             label1 = new Label();
             XMLConvertButton = new Button();
             systemMessageTextBox = new TextBox();
-            addAtteintionLabel = new Label();
             dbFunctionTabControl.SuspendLayout();
             addTabPage.SuspendLayout();
             entitiesAddTabControl.SuspendLayout();
@@ -79,7 +103,10 @@
             attributeTabPage.SuspendLayout();
             relationshipTabPage.SuspendLayout();
             updateTabPage.SuspendLayout();
-            entityUpdateTabControl.SuspendLayout();
+            entitiesUpdateTabControl.SuspendLayout();
+            tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
             deleteTabPage.SuspendLayout();
             entityDeleteTabControl.SuspendLayout();
             SuspendLayout();
@@ -116,6 +143,16 @@
             addTabPage.Text = "Добавить данные";
             addTabPage.UseVisualStyleBackColor = true;
             // 
+            // addAtteintionLabel
+            // 
+            addAtteintionLabel.AutoSize = true;
+            addAtteintionLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            addAtteintionLabel.Location = new Point(10, 489);
+            addAtteintionLabel.Name = "addAtteintionLabel";
+            addAtteintionLabel.Size = new Size(505, 20);
+            addAtteintionLabel.TabIndex = 10;
+            addAtteintionLabel.Text = "Внимание: Для связи сущностей, допускаются только существующие Id";
+            // 
             // entitiesAddTabControl
             // 
             entitiesAddTabControl.Controls.Add(objectTabPage);
@@ -129,62 +166,62 @@
             // 
             // objectTabPage
             // 
-            objectTabPage.Controls.Add(productObjectTextBox);
-            objectTabPage.Controls.Add(typeObjectTextBox);
-            objectTabPage.Controls.Add(ProductObjectLabel);
-            objectTabPage.Controls.Add(TypeObjectLabel);
+            objectTabPage.Controls.Add(productObjectAddTextBox);
+            objectTabPage.Controls.Add(typeObjectAddTextBox);
+            objectTabPage.Controls.Add(ProductObjectAddLabel);
+            objectTabPage.Controls.Add(TypeObjectAddLabel);
             objectTabPage.Location = new Point(4, 24);
             objectTabPage.Name = "objectTabPage";
             objectTabPage.Padding = new Padding(3);
-            objectTabPage.Size = new Size(484, 449);
+            objectTabPage.Size = new Size(559, 403);
             objectTabPage.TabIndex = 0;
             objectTabPage.Text = "Объект";
             objectTabPage.UseVisualStyleBackColor = true;
             // 
-            // productObjectTextBox
+            // productObjectAddTextBox
             // 
-            productObjectTextBox.Location = new Point(6, 110);
-            productObjectTextBox.MaxLength = 50;
-            productObjectTextBox.Name = "productObjectTextBox";
-            productObjectTextBox.Size = new Size(472, 23);
-            productObjectTextBox.TabIndex = 3;
+            productObjectAddTextBox.Location = new Point(6, 110);
+            productObjectAddTextBox.MaxLength = 50;
+            productObjectAddTextBox.Name = "productObjectAddTextBox";
+            productObjectAddTextBox.Size = new Size(472, 23);
+            productObjectAddTextBox.TabIndex = 3;
             // 
-            // typeObjectTextBox
+            // typeObjectAddTextBox
             // 
-            typeObjectTextBox.Location = new Point(6, 44);
-            typeObjectTextBox.MaxLength = 50;
-            typeObjectTextBox.Name = "typeObjectTextBox";
-            typeObjectTextBox.Size = new Size(472, 23);
-            typeObjectTextBox.TabIndex = 2;
+            typeObjectAddTextBox.Location = new Point(6, 44);
+            typeObjectAddTextBox.MaxLength = 50;
+            typeObjectAddTextBox.Name = "typeObjectAddTextBox";
+            typeObjectAddTextBox.Size = new Size(472, 23);
+            typeObjectAddTextBox.TabIndex = 2;
             // 
-            // ProductObjectLabel
+            // ProductObjectAddLabel
             // 
-            ProductObjectLabel.AutoSize = true;
-            ProductObjectLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            ProductObjectLabel.Location = new Point(6, 87);
-            ProductObjectLabel.Name = "ProductObjectLabel";
-            ProductObjectLabel.Size = new Size(167, 20);
-            ProductObjectLabel.TabIndex = 1;
-            ProductObjectLabel.Text = "Обозначение объекта:";
+            ProductObjectAddLabel.AutoSize = true;
+            ProductObjectAddLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            ProductObjectAddLabel.Location = new Point(6, 87);
+            ProductObjectAddLabel.Name = "ProductObjectAddLabel";
+            ProductObjectAddLabel.Size = new Size(167, 20);
+            ProductObjectAddLabel.TabIndex = 1;
+            ProductObjectAddLabel.Text = "Обозначение объекта:";
             // 
-            // TypeObjectLabel
+            // TypeObjectAddLabel
             // 
-            TypeObjectLabel.AutoSize = true;
-            TypeObjectLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            TypeObjectLabel.Location = new Point(6, 21);
-            TypeObjectLabel.Name = "TypeObjectLabel";
-            TypeObjectLabel.Size = new Size(98, 20);
-            TypeObjectLabel.TabIndex = 0;
-            TypeObjectLabel.Text = "Тип объекта:";
+            TypeObjectAddLabel.AutoSize = true;
+            TypeObjectAddLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            TypeObjectAddLabel.Location = new Point(6, 21);
+            TypeObjectAddLabel.Name = "TypeObjectAddLabel";
+            TypeObjectAddLabel.Size = new Size(98, 20);
+            TypeObjectAddLabel.TabIndex = 0;
+            TypeObjectAddLabel.Text = "Тип объекта:";
             // 
             // attributeTabPage
             // 
-            attributeTabPage.Controls.Add(objectIdAttributeTextBox);
-            attributeTabPage.Controls.Add(ObjectIdAttributeLabel);
-            attributeTabPage.Controls.Add(valueAttributeTextBox);
-            attributeTabPage.Controls.Add(nameAttributeTextBox);
-            attributeTabPage.Controls.Add(ValueAttributeLabel);
-            attributeTabPage.Controls.Add(NameAttributeLabel);
+            attributeTabPage.Controls.Add(objectIdAttributeAddTextBox);
+            attributeTabPage.Controls.Add(ObjectIdAttributeAddLabel);
+            attributeTabPage.Controls.Add(valueAttributeAddTextBox);
+            attributeTabPage.Controls.Add(nameAttributeAddTextBox);
+            attributeTabPage.Controls.Add(ValueAttributeAddLabel);
+            attributeTabPage.Controls.Add(NameAttributeAddLabel);
             attributeTabPage.Location = new Point(4, 24);
             attributeTabPage.Name = "attributeTabPage";
             attributeTabPage.Padding = new Padding(3);
@@ -193,68 +230,68 @@
             attributeTabPage.Text = "Атрибут";
             attributeTabPage.UseVisualStyleBackColor = true;
             // 
-            // objectIdAttributeTextBox
+            // objectIdAttributeAddTextBox
             // 
-            objectIdAttributeTextBox.Location = new Point(6, 38);
-            objectIdAttributeTextBox.MaxLength = 50;
-            objectIdAttributeTextBox.Name = "objectIdAttributeTextBox";
-            objectIdAttributeTextBox.Size = new Size(547, 23);
-            objectIdAttributeTextBox.TabIndex = 9;
+            objectIdAttributeAddTextBox.Location = new Point(6, 38);
+            objectIdAttributeAddTextBox.MaxLength = 50;
+            objectIdAttributeAddTextBox.Name = "objectIdAttributeAddTextBox";
+            objectIdAttributeAddTextBox.Size = new Size(547, 23);
+            objectIdAttributeAddTextBox.TabIndex = 9;
             // 
-            // ObjectIdAttributeLabel
+            // ObjectIdAttributeAddLabel
             // 
-            ObjectIdAttributeLabel.AutoSize = true;
-            ObjectIdAttributeLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            ObjectIdAttributeLabel.Location = new Point(6, 15);
-            ObjectIdAttributeLabel.Name = "ObjectIdAttributeLabel";
-            ObjectIdAttributeLabel.Size = new Size(85, 20);
-            ObjectIdAttributeLabel.TabIndex = 8;
-            ObjectIdAttributeLabel.Text = "Id объекта:";
+            ObjectIdAttributeAddLabel.AutoSize = true;
+            ObjectIdAttributeAddLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            ObjectIdAttributeAddLabel.Location = new Point(6, 15);
+            ObjectIdAttributeAddLabel.Name = "ObjectIdAttributeAddLabel";
+            ObjectIdAttributeAddLabel.Size = new Size(85, 20);
+            ObjectIdAttributeAddLabel.TabIndex = 8;
+            ObjectIdAttributeAddLabel.Text = "Id объекта:";
             // 
-            // valueAttributeTextBox
+            // valueAttributeAddTextBox
             // 
-            valueAttributeTextBox.Location = new Point(6, 169);
-            valueAttributeTextBox.MaxLength = 50;
-            valueAttributeTextBox.Name = "valueAttributeTextBox";
-            valueAttributeTextBox.Size = new Size(547, 23);
-            valueAttributeTextBox.TabIndex = 7;
+            valueAttributeAddTextBox.Location = new Point(6, 169);
+            valueAttributeAddTextBox.MaxLength = 50;
+            valueAttributeAddTextBox.Name = "valueAttributeAddTextBox";
+            valueAttributeAddTextBox.Size = new Size(547, 23);
+            valueAttributeAddTextBox.TabIndex = 7;
             // 
-            // nameAttributeTextBox
+            // nameAttributeAddTextBox
             // 
-            nameAttributeTextBox.Location = new Point(6, 103);
-            nameAttributeTextBox.MaxLength = 50;
-            nameAttributeTextBox.Name = "nameAttributeTextBox";
-            nameAttributeTextBox.Size = new Size(547, 23);
-            nameAttributeTextBox.TabIndex = 6;
+            nameAttributeAddTextBox.Location = new Point(6, 103);
+            nameAttributeAddTextBox.MaxLength = 50;
+            nameAttributeAddTextBox.Name = "nameAttributeAddTextBox";
+            nameAttributeAddTextBox.Size = new Size(547, 23);
+            nameAttributeAddTextBox.TabIndex = 6;
             // 
-            // ValueAttributeLabel
+            // ValueAttributeAddLabel
             // 
-            ValueAttributeLabel.AutoSize = true;
-            ValueAttributeLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            ValueAttributeLabel.Location = new Point(6, 146);
-            ValueAttributeLabel.Name = "ValueAttributeLabel";
-            ValueAttributeLabel.Size = new Size(145, 20);
-            ValueAttributeLabel.TabIndex = 5;
-            ValueAttributeLabel.Text = "Значение атрибута:";
+            ValueAttributeAddLabel.AutoSize = true;
+            ValueAttributeAddLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            ValueAttributeAddLabel.Location = new Point(6, 146);
+            ValueAttributeAddLabel.Name = "ValueAttributeAddLabel";
+            ValueAttributeAddLabel.Size = new Size(145, 20);
+            ValueAttributeAddLabel.TabIndex = 5;
+            ValueAttributeAddLabel.Text = "Значение атрибута:";
             // 
-            // NameAttributeLabel
+            // NameAttributeAddLabel
             // 
-            NameAttributeLabel.AutoSize = true;
-            NameAttributeLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            NameAttributeLabel.Location = new Point(6, 80);
-            NameAttributeLabel.Name = "NameAttributeLabel";
-            NameAttributeLabel.Size = new Size(108, 20);
-            NameAttributeLabel.TabIndex = 4;
-            NameAttributeLabel.Text = "Имя атрибута:";
+            NameAttributeAddLabel.AutoSize = true;
+            NameAttributeAddLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            NameAttributeAddLabel.Location = new Point(6, 80);
+            NameAttributeAddLabel.Name = "NameAttributeAddLabel";
+            NameAttributeAddLabel.Size = new Size(108, 20);
+            NameAttributeAddLabel.TabIndex = 4;
+            NameAttributeAddLabel.Text = "Имя атрибута:";
             // 
             // relationshipTabPage
             // 
-            relationshipTabPage.Controls.Add(parentIdObjectRelationshipTextBox);
-            relationshipTabPage.Controls.Add(parentIdObjectRelationshipLabel);
-            relationshipTabPage.Controls.Add(linkNameObjectRelationshipTextBox);
-            relationshipTabPage.Controls.Add(childIdObjectRelationshipTextBox);
-            relationshipTabPage.Controls.Add(linkNameObjectRelationshipLabel);
-            relationshipTabPage.Controls.Add(childIdObjectRelationshipLabel);
+            relationshipTabPage.Controls.Add(parentIdObjectRelationshipAddTextBox);
+            relationshipTabPage.Controls.Add(parentIdObjectRelationshipAddLabel);
+            relationshipTabPage.Controls.Add(linkNameObjectRelationshipAddTextBox);
+            relationshipTabPage.Controls.Add(childIdObjectRelationshipAddTextBox);
+            relationshipTabPage.Controls.Add(linkNameObjectRelationshipAddLabel);
+            relationshipTabPage.Controls.Add(childIdObjectRelationshipAddLabel);
             relationshipTabPage.Location = new Point(4, 24);
             relationshipTabPage.Name = "relationshipTabPage";
             relationshipTabPage.Size = new Size(559, 403);
@@ -262,59 +299,59 @@
             relationshipTabPage.Text = "Свзяь объектов";
             relationshipTabPage.UseVisualStyleBackColor = true;
             // 
-            // parentIdObjectRelationshipTextBox
+            // parentIdObjectRelationshipAddTextBox
             // 
-            parentIdObjectRelationshipTextBox.Location = new Point(6, 38);
-            parentIdObjectRelationshipTextBox.MaxLength = 50;
-            parentIdObjectRelationshipTextBox.Name = "parentIdObjectRelationshipTextBox";
-            parentIdObjectRelationshipTextBox.Size = new Size(472, 23);
-            parentIdObjectRelationshipTextBox.TabIndex = 15;
+            parentIdObjectRelationshipAddTextBox.Location = new Point(6, 38);
+            parentIdObjectRelationshipAddTextBox.MaxLength = 50;
+            parentIdObjectRelationshipAddTextBox.Name = "parentIdObjectRelationshipAddTextBox";
+            parentIdObjectRelationshipAddTextBox.Size = new Size(472, 23);
+            parentIdObjectRelationshipAddTextBox.TabIndex = 15;
             // 
-            // parentIdObjectRelationshipLabel
+            // parentIdObjectRelationshipAddLabel
             // 
-            parentIdObjectRelationshipLabel.AutoSize = true;
-            parentIdObjectRelationshipLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            parentIdObjectRelationshipLabel.Location = new Point(6, 15);
-            parentIdObjectRelationshipLabel.Name = "parentIdObjectRelationshipLabel";
-            parentIdObjectRelationshipLabel.Size = new Size(156, 20);
-            parentIdObjectRelationshipLabel.TabIndex = 14;
-            parentIdObjectRelationshipLabel.Text = "Id объекта-родителя:";
+            parentIdObjectRelationshipAddLabel.AutoSize = true;
+            parentIdObjectRelationshipAddLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            parentIdObjectRelationshipAddLabel.Location = new Point(6, 15);
+            parentIdObjectRelationshipAddLabel.Name = "parentIdObjectRelationshipAddLabel";
+            parentIdObjectRelationshipAddLabel.Size = new Size(156, 20);
+            parentIdObjectRelationshipAddLabel.TabIndex = 14;
+            parentIdObjectRelationshipAddLabel.Text = "Id объекта-родителя:";
             // 
-            // linkNameObjectRelationshipTextBox
+            // linkNameObjectRelationshipAddTextBox
             // 
-            linkNameObjectRelationshipTextBox.Location = new Point(6, 169);
-            linkNameObjectRelationshipTextBox.MaxLength = 50;
-            linkNameObjectRelationshipTextBox.Name = "linkNameObjectRelationshipTextBox";
-            linkNameObjectRelationshipTextBox.Size = new Size(472, 23);
-            linkNameObjectRelationshipTextBox.TabIndex = 13;
+            linkNameObjectRelationshipAddTextBox.Location = new Point(6, 169);
+            linkNameObjectRelationshipAddTextBox.MaxLength = 50;
+            linkNameObjectRelationshipAddTextBox.Name = "linkNameObjectRelationshipAddTextBox";
+            linkNameObjectRelationshipAddTextBox.Size = new Size(472, 23);
+            linkNameObjectRelationshipAddTextBox.TabIndex = 13;
             // 
-            // childIdObjectRelationshipTextBox
+            // childIdObjectRelationshipAddTextBox
             // 
-            childIdObjectRelationshipTextBox.Location = new Point(6, 103);
-            childIdObjectRelationshipTextBox.MaxLength = 50;
-            childIdObjectRelationshipTextBox.Name = "childIdObjectRelationshipTextBox";
-            childIdObjectRelationshipTextBox.Size = new Size(472, 23);
-            childIdObjectRelationshipTextBox.TabIndex = 12;
+            childIdObjectRelationshipAddTextBox.Location = new Point(6, 103);
+            childIdObjectRelationshipAddTextBox.MaxLength = 50;
+            childIdObjectRelationshipAddTextBox.Name = "childIdObjectRelationshipAddTextBox";
+            childIdObjectRelationshipAddTextBox.Size = new Size(472, 23);
+            childIdObjectRelationshipAddTextBox.TabIndex = 12;
             // 
-            // linkNameObjectRelationshipLabel
+            // linkNameObjectRelationshipAddLabel
             // 
-            linkNameObjectRelationshipLabel.AutoSize = true;
-            linkNameObjectRelationshipLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            linkNameObjectRelationshipLabel.Location = new Point(6, 146);
-            linkNameObjectRelationshipLabel.Name = "linkNameObjectRelationshipLabel";
-            linkNameObjectRelationshipLabel.Size = new Size(124, 20);
-            linkNameObjectRelationshipLabel.TabIndex = 11;
-            linkNameObjectRelationshipLabel.Text = "Связующие имя:";
+            linkNameObjectRelationshipAddLabel.AutoSize = true;
+            linkNameObjectRelationshipAddLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            linkNameObjectRelationshipAddLabel.Location = new Point(6, 146);
+            linkNameObjectRelationshipAddLabel.Name = "linkNameObjectRelationshipAddLabel";
+            linkNameObjectRelationshipAddLabel.Size = new Size(124, 20);
+            linkNameObjectRelationshipAddLabel.TabIndex = 11;
+            linkNameObjectRelationshipAddLabel.Text = "Связующие имя:";
             // 
-            // childIdObjectRelationshipLabel
+            // childIdObjectRelationshipAddLabel
             // 
-            childIdObjectRelationshipLabel.AutoSize = true;
-            childIdObjectRelationshipLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            childIdObjectRelationshipLabel.Location = new Point(6, 80);
-            childIdObjectRelationshipLabel.Name = "childIdObjectRelationshipLabel";
-            childIdObjectRelationshipLabel.Size = new Size(172, 20);
-            childIdObjectRelationshipLabel.TabIndex = 10;
-            childIdObjectRelationshipLabel.Text = "Id объекта-наследника:";
+            childIdObjectRelationshipAddLabel.AutoSize = true;
+            childIdObjectRelationshipAddLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            childIdObjectRelationshipAddLabel.Location = new Point(6, 80);
+            childIdObjectRelationshipAddLabel.Name = "childIdObjectRelationshipAddLabel";
+            childIdObjectRelationshipAddLabel.Size = new Size(172, 20);
+            childIdObjectRelationshipAddLabel.TabIndex = 10;
+            childIdObjectRelationshipAddLabel.Text = "Id объекта-наследника:";
             // 
             // label2
             // 
@@ -323,7 +360,7 @@
             label2.Name = "label2";
             label2.Size = new Size(492, 23);
             label2.TabIndex = 1;
-            label2.Text = "Заполните поля нужных сущностей";
+            label2.Text = "Заполните все поля добавляемой сущности";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // AddEntityButton
@@ -338,7 +375,9 @@
             // 
             // updateTabPage
             // 
-            updateTabPage.Controls.Add(entityUpdateTabControl);
+            updateTabPage.Controls.Add(updateAtteintionLabel1);
+            updateTabPage.Controls.Add(updateAtteintionLabel2);
+            updateTabPage.Controls.Add(entitiesUpdateTabControl);
             updateTabPage.Controls.Add(label3);
             updateTabPage.Controls.Add(UpdateEntityButton);
             updateTabPage.Location = new Point(4, 24);
@@ -348,45 +387,284 @@
             updateTabPage.Text = "Обновить данные";
             updateTabPage.UseVisualStyleBackColor = true;
             // 
-            // entityUpdateTabControl
+            // updateAtteintionLabel1
             // 
-            entityUpdateTabControl.Controls.Add(tabPage1);
-            entityUpdateTabControl.Controls.Add(tabPage2);
-            entityUpdateTabControl.Controls.Add(tabPage3);
-            entityUpdateTabControl.Location = new Point(6, 29);
-            entityUpdateTabControl.Name = "entityUpdateTabControl";
-            entityUpdateTabControl.SelectedIndex = 0;
-            entityUpdateTabControl.Size = new Size(567, 431);
-            entityUpdateTabControl.TabIndex = 3;
+            updateAtteintionLabel1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            updateAtteintionLabel1.Location = new Point(10, 443);
+            updateAtteintionLabel1.Name = "updateAtteintionLabel1";
+            updateAtteintionLabel1.Size = new Size(559, 46);
+            updateAtteintionLabel1.TabIndex = 12;
+            updateAtteintionLabel1.Text = "Внимание: Выбор изменяемой сущность происходит путём ввода её существующего Id, сам Id не изменяется!";
+            // 
+            // updateAtteintionLabel2
+            // 
+            updateAtteintionLabel2.AutoSize = true;
+            updateAtteintionLabel2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            updateAtteintionLabel2.Location = new Point(10, 489);
+            updateAtteintionLabel2.Name = "updateAtteintionLabel2";
+            updateAtteintionLabel2.Size = new Size(505, 20);
+            updateAtteintionLabel2.TabIndex = 11;
+            updateAtteintionLabel2.Text = "Внимание: Для связи сущностей, допускаются только существующие Id";
+            // 
+            // entitiesUpdateTabControl
+            // 
+            entitiesUpdateTabControl.Controls.Add(tabPage1);
+            entitiesUpdateTabControl.Controls.Add(tabPage2);
+            entitiesUpdateTabControl.Controls.Add(tabPage3);
+            entitiesUpdateTabControl.Location = new Point(6, 29);
+            entitiesUpdateTabControl.Name = "entitiesUpdateTabControl";
+            entitiesUpdateTabControl.SelectedIndex = 0;
+            entitiesUpdateTabControl.Size = new Size(567, 411);
+            entitiesUpdateTabControl.TabIndex = 3;
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(idObjectUpdateTextBox);
+            tabPage1.Controls.Add(idObjectUpdateLabel);
+            tabPage1.Controls.Add(productObjectUpdateTextBox);
+            tabPage1.Controls.Add(typeObjectUpdateTextBox);
+            tabPage1.Controls.Add(productObjectUpdateLabel);
+            tabPage1.Controls.Add(typeObjectUpdateLabel);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(559, 403);
+            tabPage1.Size = new Size(559, 383);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Объект";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // idObjectUpdateTextBox
+            // 
+            idObjectUpdateTextBox.Location = new Point(6, 38);
+            idObjectUpdateTextBox.MaxLength = 50;
+            idObjectUpdateTextBox.Name = "idObjectUpdateTextBox";
+            idObjectUpdateTextBox.Size = new Size(547, 23);
+            idObjectUpdateTextBox.TabIndex = 15;
+            // 
+            // idObjectUpdateLabel
+            // 
+            idObjectUpdateLabel.AutoSize = true;
+            idObjectUpdateLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            idObjectUpdateLabel.Location = new Point(6, 15);
+            idObjectUpdateLabel.Name = "idObjectUpdateLabel";
+            idObjectUpdateLabel.Size = new Size(184, 20);
+            idObjectUpdateLabel.TabIndex = 14;
+            idObjectUpdateLabel.Text = "Id изменяемого объекта:";
+            // 
+            // productObjectUpdateTextBox
+            // 
+            productObjectUpdateTextBox.Location = new Point(6, 169);
+            productObjectUpdateTextBox.MaxLength = 50;
+            productObjectUpdateTextBox.Name = "productObjectUpdateTextBox";
+            productObjectUpdateTextBox.Size = new Size(547, 23);
+            productObjectUpdateTextBox.TabIndex = 13;
+            // 
+            // typeObjectUpdateTextBox
+            // 
+            typeObjectUpdateTextBox.Location = new Point(6, 103);
+            typeObjectUpdateTextBox.MaxLength = 50;
+            typeObjectUpdateTextBox.Name = "typeObjectUpdateTextBox";
+            typeObjectUpdateTextBox.Size = new Size(547, 23);
+            typeObjectUpdateTextBox.TabIndex = 12;
+            // 
+            // productObjectUpdateLabel
+            // 
+            productObjectUpdateLabel.AutoSize = true;
+            productObjectUpdateLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            productObjectUpdateLabel.Location = new Point(6, 146);
+            productObjectUpdateLabel.Name = "productObjectUpdateLabel";
+            productObjectUpdateLabel.Size = new Size(167, 20);
+            productObjectUpdateLabel.TabIndex = 11;
+            productObjectUpdateLabel.Text = "Обозначение объекта:";
+            // 
+            // typeObjectUpdateLabel
+            // 
+            typeObjectUpdateLabel.AutoSize = true;
+            typeObjectUpdateLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            typeObjectUpdateLabel.Location = new Point(6, 80);
+            typeObjectUpdateLabel.Name = "typeObjectUpdateLabel";
+            typeObjectUpdateLabel.Size = new Size(98, 20);
+            typeObjectUpdateLabel.TabIndex = 10;
+            typeObjectUpdateLabel.Text = "Тип объекта:";
+            // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(objectIdAttributeUpdateTextBox);
+            tabPage2.Controls.Add(objectIdAttributeUpdateLabel);
+            tabPage2.Controls.Add(idAttributeUpdateTextBox);
+            tabPage2.Controls.Add(idAttributeUpdateLabel);
+            tabPage2.Controls.Add(valueAttributeUpdateTextBox);
+            tabPage2.Controls.Add(nameAttributeUpdateTextBox);
+            tabPage2.Controls.Add(valueAttributeUpdateLabel);
+            tabPage2.Controls.Add(nameAttributeUpdateLabel);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(484, 449);
+            tabPage2.Size = new Size(559, 383);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Атрибут";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // objectIdAttributeUpdateTextBox
+            // 
+            objectIdAttributeUpdateTextBox.Location = new Point(6, 100);
+            objectIdAttributeUpdateTextBox.MaxLength = 50;
+            objectIdAttributeUpdateTextBox.Name = "objectIdAttributeUpdateTextBox";
+            objectIdAttributeUpdateTextBox.Size = new Size(547, 23);
+            objectIdAttributeUpdateTextBox.TabIndex = 23;
+            // 
+            // objectIdAttributeUpdateLabel
+            // 
+            objectIdAttributeUpdateLabel.AutoSize = true;
+            objectIdAttributeUpdateLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            objectIdAttributeUpdateLabel.Location = new Point(6, 77);
+            objectIdAttributeUpdateLabel.Name = "objectIdAttributeUpdateLabel";
+            objectIdAttributeUpdateLabel.Size = new Size(85, 20);
+            objectIdAttributeUpdateLabel.TabIndex = 22;
+            objectIdAttributeUpdateLabel.Text = "Id объекта:";
+            // 
+            // idAttributeUpdateTextBox
+            // 
+            idAttributeUpdateTextBox.Location = new Point(6, 38);
+            idAttributeUpdateTextBox.MaxLength = 50;
+            idAttributeUpdateTextBox.Name = "idAttributeUpdateTextBox";
+            idAttributeUpdateTextBox.Size = new Size(547, 23);
+            idAttributeUpdateTextBox.TabIndex = 21;
+            // 
+            // idAttributeUpdateLabel
+            // 
+            idAttributeUpdateLabel.AutoSize = true;
+            idAttributeUpdateLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            idAttributeUpdateLabel.Location = new Point(6, 15);
+            idAttributeUpdateLabel.Name = "idAttributeUpdateLabel";
+            idAttributeUpdateLabel.Size = new Size(190, 20);
+            idAttributeUpdateLabel.TabIndex = 20;
+            idAttributeUpdateLabel.Text = "Id изменяемого атрибута:";
+            // 
+            // valueAttributeUpdateTextBox
+            // 
+            valueAttributeUpdateTextBox.Location = new Point(6, 228);
+            valueAttributeUpdateTextBox.MaxLength = 50;
+            valueAttributeUpdateTextBox.Name = "valueAttributeUpdateTextBox";
+            valueAttributeUpdateTextBox.Size = new Size(547, 23);
+            valueAttributeUpdateTextBox.TabIndex = 19;
+            // 
+            // nameAttributeUpdateTextBox
+            // 
+            nameAttributeUpdateTextBox.Location = new Point(6, 162);
+            nameAttributeUpdateTextBox.MaxLength = 50;
+            nameAttributeUpdateTextBox.Name = "nameAttributeUpdateTextBox";
+            nameAttributeUpdateTextBox.Size = new Size(547, 23);
+            nameAttributeUpdateTextBox.TabIndex = 18;
+            // 
+            // valueAttributeUpdateLabel
+            // 
+            valueAttributeUpdateLabel.AutoSize = true;
+            valueAttributeUpdateLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            valueAttributeUpdateLabel.Location = new Point(6, 205);
+            valueAttributeUpdateLabel.Name = "valueAttributeUpdateLabel";
+            valueAttributeUpdateLabel.Size = new Size(145, 20);
+            valueAttributeUpdateLabel.TabIndex = 17;
+            valueAttributeUpdateLabel.Text = "Значение атрибута:";
+            // 
+            // nameAttributeUpdateLabel
+            // 
+            nameAttributeUpdateLabel.AutoSize = true;
+            nameAttributeUpdateLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            nameAttributeUpdateLabel.Location = new Point(6, 139);
+            nameAttributeUpdateLabel.Name = "nameAttributeUpdateLabel";
+            nameAttributeUpdateLabel.Size = new Size(108, 20);
+            nameAttributeUpdateLabel.TabIndex = 16;
+            nameAttributeUpdateLabel.Text = "Имя атрибута:";
+            // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(parentIdObjectRelationshipUpdateTextBox);
+            tabPage3.Controls.Add(parentIdObjectRelationshipUpdateLabel);
+            tabPage3.Controls.Add(idObjectRelationshipUpdateTextBox);
+            tabPage3.Controls.Add(idObjectRelationshipUpdateLabel);
+            tabPage3.Controls.Add(linkNameObjectRelationshipUpdateTextBox);
+            tabPage3.Controls.Add(childIdObjectRelationshipUpdateTextBox);
+            tabPage3.Controls.Add(linkNameObjectRelationshipUpdateLabel);
+            tabPage3.Controls.Add(childIdObjectRelationshipUpdateLabel);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(484, 449);
+            tabPage3.Size = new Size(559, 383);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Свзяь объектов";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // parentIdObjectRelationshipUpdateTextBox
+            // 
+            parentIdObjectRelationshipUpdateTextBox.Location = new Point(6, 100);
+            parentIdObjectRelationshipUpdateTextBox.MaxLength = 50;
+            parentIdObjectRelationshipUpdateTextBox.Name = "parentIdObjectRelationshipUpdateTextBox";
+            parentIdObjectRelationshipUpdateTextBox.Size = new Size(547, 23);
+            parentIdObjectRelationshipUpdateTextBox.TabIndex = 31;
+            // 
+            // parentIdObjectRelationshipUpdateLabel
+            // 
+            parentIdObjectRelationshipUpdateLabel.AutoSize = true;
+            parentIdObjectRelationshipUpdateLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            parentIdObjectRelationshipUpdateLabel.Location = new Point(6, 77);
+            parentIdObjectRelationshipUpdateLabel.Name = "parentIdObjectRelationshipUpdateLabel";
+            parentIdObjectRelationshipUpdateLabel.Size = new Size(156, 20);
+            parentIdObjectRelationshipUpdateLabel.TabIndex = 30;
+            parentIdObjectRelationshipUpdateLabel.Text = "Id объекта-родителя:";
+            // 
+            // idObjectRelationshipUpdateTextBox
+            // 
+            idObjectRelationshipUpdateTextBox.Location = new Point(6, 38);
+            idObjectRelationshipUpdateTextBox.MaxLength = 50;
+            idObjectRelationshipUpdateTextBox.Name = "idObjectRelationshipUpdateTextBox";
+            idObjectRelationshipUpdateTextBox.Size = new Size(547, 23);
+            idObjectRelationshipUpdateTextBox.TabIndex = 29;
+            // 
+            // idObjectRelationshipUpdateLabel
+            // 
+            idObjectRelationshipUpdateLabel.AutoSize = true;
+            idObjectRelationshipUpdateLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            idObjectRelationshipUpdateLabel.Location = new Point(6, 15);
+            idObjectRelationshipUpdateLabel.Name = "idObjectRelationshipUpdateLabel";
+            idObjectRelationshipUpdateLabel.Size = new Size(161, 20);
+            idObjectRelationshipUpdateLabel.TabIndex = 28;
+            idObjectRelationshipUpdateLabel.Text = "Id изменяемой связи:";
+            // 
+            // linkNameObjectRelationshipUpdateTextBox
+            // 
+            linkNameObjectRelationshipUpdateTextBox.Location = new Point(6, 228);
+            linkNameObjectRelationshipUpdateTextBox.MaxLength = 50;
+            linkNameObjectRelationshipUpdateTextBox.Name = "linkNameObjectRelationshipUpdateTextBox";
+            linkNameObjectRelationshipUpdateTextBox.Size = new Size(547, 23);
+            linkNameObjectRelationshipUpdateTextBox.TabIndex = 27;
+            // 
+            // childIdObjectRelationshipUpdateTextBox
+            // 
+            childIdObjectRelationshipUpdateTextBox.Location = new Point(6, 162);
+            childIdObjectRelationshipUpdateTextBox.MaxLength = 50;
+            childIdObjectRelationshipUpdateTextBox.Name = "childIdObjectRelationshipUpdateTextBox";
+            childIdObjectRelationshipUpdateTextBox.Size = new Size(547, 23);
+            childIdObjectRelationshipUpdateTextBox.TabIndex = 26;
+            // 
+            // linkNameObjectRelationshipUpdateLabel
+            // 
+            linkNameObjectRelationshipUpdateLabel.AutoSize = true;
+            linkNameObjectRelationshipUpdateLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            linkNameObjectRelationshipUpdateLabel.Location = new Point(6, 205);
+            linkNameObjectRelationshipUpdateLabel.Name = "linkNameObjectRelationshipUpdateLabel";
+            linkNameObjectRelationshipUpdateLabel.Size = new Size(124, 20);
+            linkNameObjectRelationshipUpdateLabel.TabIndex = 25;
+            linkNameObjectRelationshipUpdateLabel.Text = "Связующие имя:";
+            // 
+            // childIdObjectRelationshipUpdateLabel
+            // 
+            childIdObjectRelationshipUpdateLabel.AutoSize = true;
+            childIdObjectRelationshipUpdateLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            childIdObjectRelationshipUpdateLabel.Location = new Point(6, 139);
+            childIdObjectRelationshipUpdateLabel.Name = "childIdObjectRelationshipUpdateLabel";
+            childIdObjectRelationshipUpdateLabel.Size = new Size(172, 20);
+            childIdObjectRelationshipUpdateLabel.TabIndex = 24;
+            childIdObjectRelationshipUpdateLabel.Text = "Id объекта-наследника:";
             // 
             // label3
             // 
@@ -395,7 +673,7 @@
             label3.Name = "label3";
             label3.Size = new Size(492, 23);
             label3.TabIndex = 2;
-            label3.Text = "Заполните поля нужных сущностей";
+            label3.Text = "Заполните изменяемы поля нужно сущности";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // UpdateEntityButton
@@ -406,6 +684,7 @@
             UpdateEntityButton.TabIndex = 1;
             UpdateEntityButton.Text = "Обновить";
             UpdateEntityButton.UseVisualStyleBackColor = true;
+            UpdateEntityButton.Click += UpdateEntityButton_Click;
             // 
             // deleteTabPage
             // 
@@ -446,7 +725,7 @@
             tabPage5.Location = new Point(4, 24);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(484, 449);
+            tabPage5.Size = new Size(559, 403);
             tabPage5.TabIndex = 1;
             tabPage5.Text = "Атрибут";
             tabPage5.UseVisualStyleBackColor = true;
@@ -455,7 +734,7 @@
             // 
             tabPage6.Location = new Point(4, 24);
             tabPage6.Name = "tabPage6";
-            tabPage6.Size = new Size(484, 449);
+            tabPage6.Size = new Size(559, 403);
             tabPage6.TabIndex = 2;
             tabPage6.Text = "Свзяь объектов";
             tabPage6.UseVisualStyleBackColor = true;
@@ -518,16 +797,6 @@
             systemMessageTextBox.Size = new Size(587, 88);
             systemMessageTextBox.TabIndex = 5;
             // 
-            // addAtteintionLabel
-            // 
-            addAtteintionLabel.AutoSize = true;
-            addAtteintionLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            addAtteintionLabel.Location = new Point(10, 475);
-            addAtteintionLabel.Name = "addAtteintionLabel";
-            addAtteintionLabel.Size = new Size(505, 20);
-            addAtteintionLabel.TabIndex = 10;
-            addAtteintionLabel.Text = "Внимание: Для связи сущностей, допускаются только существующие Id";
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -556,7 +825,14 @@
             relationshipTabPage.ResumeLayout(false);
             relationshipTabPage.PerformLayout();
             updateTabPage.ResumeLayout(false);
-            entityUpdateTabControl.ResumeLayout(false);
+            updateTabPage.PerformLayout();
+            entitiesUpdateTabControl.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
             deleteTabPage.ResumeLayout(false);
             entityDeleteTabControl.ResumeLayout(false);
             ResumeLayout(false);
@@ -583,7 +859,7 @@
         private TabPage objectTabPage;
         private TabPage attributeTabPage;
         private TabPage relationshipTabPage;
-        private TabControl entityUpdateTabControl;
+        private TabControl entitiesUpdateTabControl;
         private TabPage tabPage1;
         private TabPage tabPage2;
         private TabPage tabPage3;
@@ -592,22 +868,46 @@
         private TabPage tabPage5;
         private TabPage tabPage6;
         private TextBox systemMessageTextBox;
-        private Label TypeObjectLabel;
-        private Label ProductObjectLabel;
-        private TextBox typeObjectTextBox;
-        private TextBox productObjectTextBox;
-        private TextBox valueAttributeTextBox;
-        private TextBox nameAttributeTextBox;
-        private Label ValueAttributeLabel;
-        private Label NameAttributeLabel;
-        private TextBox objectIdAttributeTextBox;
-        private Label ObjectIdAttributeLabel;
-        private TextBox parentIdObjectRelationshipTextBox;
-        private Label parentIdObjectRelationshipLabel;
-        private TextBox linkNameObjectRelationshipTextBox;
-        private TextBox childIdObjectRelationshipTextBox;
-        private Label linkNameObjectRelationshipLabel;
-        private Label childIdObjectRelationshipLabel;
+        private Label TypeObjectAddLabel;
+        private Label ProductObjectAddLabel;
+        private TextBox typeObjectAddTextBox;
+        private TextBox productObjectAddTextBox;
+        private TextBox valueAttributeAddTextBox;
+        private TextBox nameAttributeAddTextBox;
+        private Label ValueAttributeAddLabel;
+        private Label NameAttributeAddLabel;
+        private TextBox objectIdAttributeAddTextBox;
+        private Label ObjectIdAttributeAddLabel;
+        private TextBox parentIdObjectRelationshipAddTextBox;
+        private Label parentIdObjectRelationshipAddLabel;
+        private TextBox linkNameObjectRelationshipAddTextBox;
+        private TextBox childIdObjectRelationshipAddTextBox;
+        private Label linkNameObjectRelationshipAddLabel;
+        private Label childIdObjectRelationshipAddLabel;
         private Label addAtteintionLabel;
+        private TextBox idObjectUpdateTextBox;
+        private Label idObjectUpdateLabel;
+        private TextBox productObjectUpdateTextBox;
+        private TextBox typeObjectUpdateTextBox;
+        private Label productObjectUpdateLabel;
+        private Label typeObjectUpdateLabel;
+        private Label updateAtteintionLabel1;
+        private Label updateAtteintionLabel2;
+        private TextBox idAttributeUpdateTextBox;
+        private Label idAttributeUpdateLabel;
+        private TextBox valueAttributeUpdateTextBox;
+        private TextBox nameAttributeUpdateTextBox;
+        private Label valueAttributeUpdateLabel;
+        private Label nameAttributeUpdateLabel;
+        private TextBox objectIdAttributeUpdateTextBox;
+        private Label objectIdAttributeUpdateLabel;
+        private TextBox parentIdObjectRelationshipUpdateTextBox;
+        private Label parentIdObjectRelationshipUpdateLabel;
+        private TextBox idObjectRelationshipUpdateTextBox;
+        private Label idObjectRelationshipUpdateLabel;
+        private TextBox linkNameObjectRelationshipUpdateTextBox;
+        private TextBox childIdObjectRelationshipUpdateTextBox;
+        private Label linkNameObjectRelationshipUpdateLabel;
+        private Label childIdObjectRelationshipUpdateLabel;
     }
 }

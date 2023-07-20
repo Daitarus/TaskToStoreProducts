@@ -76,6 +76,20 @@ namespace TaskToStoreProducts.DataBaseBehavior
                 printSystemMessageCallback("Ошибка: Действие невозможно, база данных не подключена!");
             return result;
         }
+        public bool IsEntityNullWithPrintError(Entity? entity)
+        {
+            bool result = entity == null;
+            if(result)
+                printSystemMessageCallback($"Ошибка: Сущность с таким {nameof(entity.Id)} не найдено!");
+            return result;
+        }
+        public bool IsIdsEqualWithPrintError(long id1, long id2)
+        {
+            bool result = id1 == id2;
+            if(result)
+                printSystemMessageCallback($"Ошибка: Сущность не может быть связана сама с собой!");
+            return result;
+        }
         public bool TryParseToId(string str, out long id)
         {
             bool result = long.TryParse(str, out id);
