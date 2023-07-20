@@ -118,5 +118,28 @@ namespace TaskToStoreFactoryProducts
                     }
             }
         }
+
+        private void DeleteEntityButton_Click(object sender, EventArgs e)
+        {
+            DeleteBehavior deleteBehavior = new DeleteBehavior(dbBehavior);
+            switch (entitiesDeleteTabControl.SelectedIndex)
+            {
+                case 0:
+                    {
+                        deleteBehavior.TryDeleteObjectEntity(idObjectDeleteTextBox.Text);
+                        break;
+                    }
+                case 1:
+                    {
+                        deleteBehavior.TryDeleteAttributeEntity(idAttributeDeleteTextBox.Text);
+                        break;
+                    }
+                case 2:
+                    {
+                        deleteBehavior.TryDeleteObjectRelationshipEntity(idObjectRelationshipDeleteTextBox.Text);
+                        break;
+                    }
+            }
+        }
     }
 }

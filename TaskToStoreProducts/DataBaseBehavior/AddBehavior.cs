@@ -19,7 +19,8 @@ namespace TaskToStoreProducts.DataBaseBehavior
 
         public bool TryAddObjectEntity(string type, string product)
         {
-            if (!dbBehavior.IsArgumentNullOrEmptyWithPrintError(type, product) && !dbBehavior.IsDataBaseNullWithPrintError())
+            if (!dbBehavior.IsArgumentNullOrEmptyWithPrintError(type, product) 
+                && !dbBehavior.IsDataBaseNullWithPrintError())
             {
                 ObjectEntity objectEntity = new ObjectEntity() { Type = type, Product = product };
                 ObjectRepository objectRepository = new ObjectRepository(dbBehavior.database);

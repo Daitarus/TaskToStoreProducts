@@ -20,7 +20,8 @@ namespace TaskToStoreProducts.DataBaseBehavior
         public bool TryUpdateObjectEntity(string idStr, string type, string product)
         {
             long id;
-            if (dbBehavior.TryParseToId(idStr, out id))
+            if (dbBehavior.TryParseToId(idStr, out id)
+                && !dbBehavior.IsDataBaseNullWithPrintError())
             {
                 ObjectRepository objectRepository = new ObjectRepository(dbBehavior.database);
                 ObjectEntity? objectEntity = objectRepository.SelectForId(id);
@@ -33,13 +34,13 @@ namespace TaskToStoreProducts.DataBaseBehavior
                     return dbBehavior.TrySaveChangeIntoDB(objectRepository);
                 }
             }
-
             return false;
         }
         public bool TryUpdateAttributeEntity(string idStr, string objectIdStr, string name, string value)
         {
             long id;
-            if (dbBehavior.TryParseToId(idStr, out id))
+            if (dbBehavior.TryParseToId(idStr, out id)
+                && !dbBehavior.IsDataBaseNullWithPrintError())
             {
                 AttributeRepository attributeRepository = new AttributeRepository(dbBehavior.database);
                 AttributeEntity? attributeEntity = attributeRepository.SelectForId(id);
@@ -60,7 +61,8 @@ namespace TaskToStoreProducts.DataBaseBehavior
         public bool TryUpdateObjectRelationshipEntity(string idStr, string parentIdStr, string childIdStr, string linkName)
         {
             long id;
-            if (dbBehavior.TryParseToId(idStr, out id))
+            if (dbBehavior.TryParseToId(idStr, out id)
+                && !dbBehavior.IsDataBaseNullWithPrintError())
             {
                 ObjectRelationshipRepository objectRelationshipRepository = new ObjectRelationshipRepository(dbBehavior.database);
                 ObjectRelationshipEntity? objectRelationshipEntity = objectRelationshipRepository.SelectForId(id);

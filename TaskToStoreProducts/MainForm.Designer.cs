@@ -86,10 +86,18 @@
             label3 = new Label();
             UpdateEntityButton = new Button();
             deleteTabPage = new TabPage();
-            entityDeleteTabControl = new TabControl();
+            deleteAtteintionLabel2 = new Label();
+            deleteAtteintionLabel1 = new Label();
+            entitiesDeleteTabControl = new TabControl();
             tabPage4 = new TabPage();
+            idObjectDeleteTextBox = new TextBox();
+            idObjectDeleteLabel = new Label();
             tabPage5 = new TabPage();
+            idAttributeDeleteTextBox = new TextBox();
+            idAttributeDeleteLabel = new Label();
             tabPage6 = new TabPage();
+            idObjectRelationshipDeleteTextBox = new TextBox();
+            idObjectRelationshipDeleteLabel = new Label();
             label4 = new Label();
             DeleteEntityButton = new Button();
             OutputDataButton = new Button();
@@ -108,7 +116,10 @@
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
             deleteTabPage.SuspendLayout();
-            entityDeleteTabControl.SuspendLayout();
+            entitiesDeleteTabControl.SuspendLayout();
+            tabPage4.SuspendLayout();
+            tabPage5.SuspendLayout();
+            tabPage6.SuspendLayout();
             SuspendLayout();
             // 
             // treeView1
@@ -161,7 +172,7 @@
             entitiesAddTabControl.Location = new Point(6, 29);
             entitiesAddTabControl.Name = "entitiesAddTabControl";
             entitiesAddTabControl.SelectedIndex = 0;
-            entitiesAddTabControl.Size = new Size(567, 431);
+            entitiesAddTabControl.Size = new Size(567, 457);
             entitiesAddTabControl.TabIndex = 2;
             // 
             // objectTabPage
@@ -173,7 +184,7 @@
             objectTabPage.Location = new Point(4, 24);
             objectTabPage.Name = "objectTabPage";
             objectTabPage.Padding = new Padding(3);
-            objectTabPage.Size = new Size(559, 403);
+            objectTabPage.Size = new Size(559, 429);
             objectTabPage.TabIndex = 0;
             objectTabPage.Text = "Объект";
             objectTabPage.UseVisualStyleBackColor = true;
@@ -183,7 +194,7 @@
             productObjectAddTextBox.Location = new Point(6, 110);
             productObjectAddTextBox.MaxLength = 50;
             productObjectAddTextBox.Name = "productObjectAddTextBox";
-            productObjectAddTextBox.Size = new Size(472, 23);
+            productObjectAddTextBox.Size = new Size(547, 23);
             productObjectAddTextBox.TabIndex = 3;
             // 
             // typeObjectAddTextBox
@@ -191,7 +202,7 @@
             typeObjectAddTextBox.Location = new Point(6, 44);
             typeObjectAddTextBox.MaxLength = 50;
             typeObjectAddTextBox.Name = "typeObjectAddTextBox";
-            typeObjectAddTextBox.Size = new Size(472, 23);
+            typeObjectAddTextBox.Size = new Size(547, 23);
             typeObjectAddTextBox.TabIndex = 2;
             // 
             // ProductObjectAddLabel
@@ -225,7 +236,7 @@
             attributeTabPage.Location = new Point(4, 24);
             attributeTabPage.Name = "attributeTabPage";
             attributeTabPage.Padding = new Padding(3);
-            attributeTabPage.Size = new Size(559, 403);
+            attributeTabPage.Size = new Size(559, 429);
             attributeTabPage.TabIndex = 1;
             attributeTabPage.Text = "Атрибут";
             attributeTabPage.UseVisualStyleBackColor = true;
@@ -294,7 +305,7 @@
             relationshipTabPage.Controls.Add(childIdObjectRelationshipAddLabel);
             relationshipTabPage.Location = new Point(4, 24);
             relationshipTabPage.Name = "relationshipTabPage";
-            relationshipTabPage.Size = new Size(559, 403);
+            relationshipTabPage.Size = new Size(559, 429);
             relationshipTabPage.TabIndex = 2;
             relationshipTabPage.Text = "Свзяь объектов";
             relationshipTabPage.UseVisualStyleBackColor = true;
@@ -304,7 +315,7 @@
             parentIdObjectRelationshipAddTextBox.Location = new Point(6, 38);
             parentIdObjectRelationshipAddTextBox.MaxLength = 50;
             parentIdObjectRelationshipAddTextBox.Name = "parentIdObjectRelationshipAddTextBox";
-            parentIdObjectRelationshipAddTextBox.Size = new Size(472, 23);
+            parentIdObjectRelationshipAddTextBox.Size = new Size(550, 23);
             parentIdObjectRelationshipAddTextBox.TabIndex = 15;
             // 
             // parentIdObjectRelationshipAddLabel
@@ -322,7 +333,7 @@
             linkNameObjectRelationshipAddTextBox.Location = new Point(6, 169);
             linkNameObjectRelationshipAddTextBox.MaxLength = 50;
             linkNameObjectRelationshipAddTextBox.Name = "linkNameObjectRelationshipAddTextBox";
-            linkNameObjectRelationshipAddTextBox.Size = new Size(472, 23);
+            linkNameObjectRelationshipAddTextBox.Size = new Size(550, 23);
             linkNameObjectRelationshipAddTextBox.TabIndex = 13;
             // 
             // childIdObjectRelationshipAddTextBox
@@ -330,7 +341,7 @@
             childIdObjectRelationshipAddTextBox.Location = new Point(6, 103);
             childIdObjectRelationshipAddTextBox.MaxLength = 50;
             childIdObjectRelationshipAddTextBox.Name = "childIdObjectRelationshipAddTextBox";
-            childIdObjectRelationshipAddTextBox.Size = new Size(472, 23);
+            childIdObjectRelationshipAddTextBox.Size = new Size(550, 23);
             childIdObjectRelationshipAddTextBox.TabIndex = 12;
             // 
             // linkNameObjectRelationshipAddLabel
@@ -358,7 +369,7 @@
             label2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(6, 3);
             label2.Name = "label2";
-            label2.Size = new Size(492, 23);
+            label2.Size = new Size(567, 23);
             label2.TabIndex = 1;
             label2.Text = "Заполните все поля добавляемой сущности";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -389,7 +400,7 @@
             // 
             // updateAtteintionLabel1
             // 
-            updateAtteintionLabel1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            updateAtteintionLabel1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             updateAtteintionLabel1.Location = new Point(10, 443);
             updateAtteintionLabel1.Name = "updateAtteintionLabel1";
             updateAtteintionLabel1.Size = new Size(559, 46);
@@ -399,7 +410,7 @@
             // updateAtteintionLabel2
             // 
             updateAtteintionLabel2.AutoSize = true;
-            updateAtteintionLabel2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            updateAtteintionLabel2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             updateAtteintionLabel2.Location = new Point(10, 489);
             updateAtteintionLabel2.Name = "updateAtteintionLabel2";
             updateAtteintionLabel2.Size = new Size(505, 20);
@@ -671,9 +682,9 @@
             label3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(6, 3);
             label3.Name = "label3";
-            label3.Size = new Size(492, 23);
+            label3.Size = new Size(567, 23);
             label3.TabIndex = 2;
-            label3.Text = "Заполните изменяемы поля нужно сущности";
+            label3.Text = "Заполните изменяемые поля нужно сущности";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // UpdateEntityButton
@@ -688,7 +699,9 @@
             // 
             // deleteTabPage
             // 
-            deleteTabPage.Controls.Add(entityDeleteTabControl);
+            deleteTabPage.Controls.Add(deleteAtteintionLabel2);
+            deleteTabPage.Controls.Add(deleteAtteintionLabel1);
+            deleteTabPage.Controls.Add(entitiesDeleteTabControl);
             deleteTabPage.Controls.Add(label4);
             deleteTabPage.Controls.Add(DeleteEntityButton);
             deleteTabPage.Location = new Point(4, 24);
@@ -699,54 +712,134 @@
             deleteTabPage.Text = "Удалить данные";
             deleteTabPage.UseVisualStyleBackColor = true;
             // 
-            // entityDeleteTabControl
+            // deleteAtteintionLabel2
             // 
-            entityDeleteTabControl.Controls.Add(tabPage4);
-            entityDeleteTabControl.Controls.Add(tabPage5);
-            entityDeleteTabControl.Controls.Add(tabPage6);
-            entityDeleteTabControl.Location = new Point(6, 29);
-            entityDeleteTabControl.Name = "entityDeleteTabControl";
-            entityDeleteTabControl.SelectedIndex = 0;
-            entityDeleteTabControl.Size = new Size(567, 431);
-            entityDeleteTabControl.TabIndex = 4;
+            deleteAtteintionLabel2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteAtteintionLabel2.Location = new Point(10, 463);
+            deleteAtteintionLabel2.Name = "deleteAtteintionLabel2";
+            deleteAtteintionLabel2.Size = new Size(559, 46);
+            deleteAtteintionLabel2.TabIndex = 14;
+            deleteAtteintionLabel2.Text = "Внимание: Если имеются сущности, которые зависят от удаляемой, они тоже будут удалены!";
+            // 
+            // deleteAtteintionLabel1
+            // 
+            deleteAtteintionLabel1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteAtteintionLabel1.Location = new Point(10, 418);
+            deleteAtteintionLabel1.Name = "deleteAtteintionLabel1";
+            deleteAtteintionLabel1.Size = new Size(559, 46);
+            deleteAtteintionLabel1.TabIndex = 13;
+            deleteAtteintionLabel1.Text = "Внимание: Выбор удаляемой сущность происходит путём ввода её существующего Id!";
+            // 
+            // entitiesDeleteTabControl
+            // 
+            entitiesDeleteTabControl.Controls.Add(tabPage4);
+            entitiesDeleteTabControl.Controls.Add(tabPage5);
+            entitiesDeleteTabControl.Controls.Add(tabPage6);
+            entitiesDeleteTabControl.Location = new Point(6, 29);
+            entitiesDeleteTabControl.Name = "entitiesDeleteTabControl";
+            entitiesDeleteTabControl.SelectedIndex = 0;
+            entitiesDeleteTabControl.Size = new Size(567, 386);
+            entitiesDeleteTabControl.TabIndex = 4;
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(idObjectDeleteTextBox);
+            tabPage4.Controls.Add(idObjectDeleteLabel);
             tabPage4.Location = new Point(4, 24);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(559, 403);
+            tabPage4.Size = new Size(559, 358);
             tabPage4.TabIndex = 0;
             tabPage4.Text = "Объект";
             tabPage4.UseVisualStyleBackColor = true;
             // 
+            // idObjectDeleteTextBox
+            // 
+            idObjectDeleteTextBox.Location = new Point(6, 38);
+            idObjectDeleteTextBox.MaxLength = 50;
+            idObjectDeleteTextBox.Name = "idObjectDeleteTextBox";
+            idObjectDeleteTextBox.Size = new Size(547, 23);
+            idObjectDeleteTextBox.TabIndex = 31;
+            // 
+            // idObjectDeleteLabel
+            // 
+            idObjectDeleteLabel.AutoSize = true;
+            idObjectDeleteLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            idObjectDeleteLabel.Location = new Point(6, 15);
+            idObjectDeleteLabel.Name = "idObjectDeleteLabel";
+            idObjectDeleteLabel.Size = new Size(171, 20);
+            idObjectDeleteLabel.TabIndex = 30;
+            idObjectDeleteLabel.Text = "Id удаляемого объекта:";
+            // 
             // tabPage5
             // 
+            tabPage5.Controls.Add(idAttributeDeleteTextBox);
+            tabPage5.Controls.Add(idAttributeDeleteLabel);
             tabPage5.Location = new Point(4, 24);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(559, 403);
+            tabPage5.Size = new Size(559, 358);
             tabPage5.TabIndex = 1;
             tabPage5.Text = "Атрибут";
             tabPage5.UseVisualStyleBackColor = true;
             // 
+            // idAttributeDeleteTextBox
+            // 
+            idAttributeDeleteTextBox.Location = new Point(6, 38);
+            idAttributeDeleteTextBox.MaxLength = 50;
+            idAttributeDeleteTextBox.Name = "idAttributeDeleteTextBox";
+            idAttributeDeleteTextBox.Size = new Size(547, 23);
+            idAttributeDeleteTextBox.TabIndex = 33;
+            // 
+            // idAttributeDeleteLabel
+            // 
+            idAttributeDeleteLabel.AutoSize = true;
+            idAttributeDeleteLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            idAttributeDeleteLabel.ForeColor = SystemColors.ControlText;
+            idAttributeDeleteLabel.Location = new Point(6, 15);
+            idAttributeDeleteLabel.Name = "idAttributeDeleteLabel";
+            idAttributeDeleteLabel.Size = new Size(177, 20);
+            idAttributeDeleteLabel.TabIndex = 32;
+            idAttributeDeleteLabel.Text = "Id удаляемого атрибута:";
+            // 
             // tabPage6
             // 
+            tabPage6.Controls.Add(idObjectRelationshipDeleteTextBox);
+            tabPage6.Controls.Add(idObjectRelationshipDeleteLabel);
             tabPage6.Location = new Point(4, 24);
             tabPage6.Name = "tabPage6";
-            tabPage6.Size = new Size(559, 403);
+            tabPage6.Size = new Size(559, 358);
             tabPage6.TabIndex = 2;
             tabPage6.Text = "Свзяь объектов";
             tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // idObjectRelationshipDeleteTextBox
+            // 
+            idObjectRelationshipDeleteTextBox.Location = new Point(6, 38);
+            idObjectRelationshipDeleteTextBox.MaxLength = 50;
+            idObjectRelationshipDeleteTextBox.Name = "idObjectRelationshipDeleteTextBox";
+            idObjectRelationshipDeleteTextBox.Size = new Size(547, 23);
+            idObjectRelationshipDeleteTextBox.TabIndex = 35;
+            // 
+            // idObjectRelationshipDeleteLabel
+            // 
+            idObjectRelationshipDeleteLabel.AutoSize = true;
+            idObjectRelationshipDeleteLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            idObjectRelationshipDeleteLabel.ForeColor = SystemColors.ControlText;
+            idObjectRelationshipDeleteLabel.Location = new Point(6, 15);
+            idObjectRelationshipDeleteLabel.Name = "idObjectRelationshipDeleteLabel";
+            idObjectRelationshipDeleteLabel.Size = new Size(148, 20);
+            idObjectRelationshipDeleteLabel.TabIndex = 34;
+            idObjectRelationshipDeleteLabel.Text = "Id удаляемой связи:";
             // 
             // label4
             // 
             label4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(6, 3);
             label4.Name = "label4";
-            label4.Size = new Size(492, 23);
+            label4.Size = new Size(567, 23);
             label4.TabIndex = 3;
-            label4.Text = "Заполните поля нужных сущностей";
+            label4.Text = "Выберите удаляемую сущность";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // DeleteEntityButton
@@ -757,6 +850,7 @@
             DeleteEntityButton.TabIndex = 2;
             DeleteEntityButton.Text = "Удалить";
             DeleteEntityButton.UseVisualStyleBackColor = true;
+            DeleteEntityButton.Click += DeleteEntityButton_Click;
             // 
             // OutputDataButton
             // 
@@ -834,7 +928,13 @@
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             deleteTabPage.ResumeLayout(false);
-            entityDeleteTabControl.ResumeLayout(false);
+            entitiesDeleteTabControl.ResumeLayout(false);
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
+            tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
+            tabPage6.ResumeLayout(false);
+            tabPage6.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -863,7 +963,7 @@
         private TabPage tabPage1;
         private TabPage tabPage2;
         private TabPage tabPage3;
-        private TabControl entityDeleteTabControl;
+        private TabControl entitiesDeleteTabControl;
         private TabPage tabPage4;
         private TabPage tabPage5;
         private TabPage tabPage6;
@@ -909,5 +1009,13 @@
         private TextBox childIdObjectRelationshipUpdateTextBox;
         private Label linkNameObjectRelationshipUpdateLabel;
         private Label childIdObjectRelationshipUpdateLabel;
+        private Label deleteAtteintionLabel2;
+        private Label deleteAtteintionLabel1;
+        private TextBox idObjectDeleteTextBox;
+        private Label idObjectDeleteLabel;
+        private TextBox idAttributeDeleteTextBox;
+        private Label idAttributeDeleteLabel;
+        private TextBox idObjectRelationshipDeleteTextBox;
+        private Label idObjectRelationshipDeleteLabel;
     }
 }

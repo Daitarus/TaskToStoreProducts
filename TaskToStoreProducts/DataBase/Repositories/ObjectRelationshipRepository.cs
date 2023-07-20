@@ -9,6 +9,23 @@ namespace TaskToStoreProducts.DataBase.Repositories
 {
     internal class ObjectRelationshipRepository : Repository<ObjectRelationshipEntity>
     {
-        public ObjectRelationshipRepository(ProductDB database) : base(database) { }
+        private ProductDB productDB;
+        public ObjectRelationshipRepository(ProductDB database) : base(database) 
+        { 
+            this.productDB = database;
+        }
+
+        public ICollection<ObjectRelationshipEntity> SelectForParentId(long parentId)
+        {
+            IQueryable<ObjectRelationshipEntity> objectRelationshipEntities = productDB.ObjectRelationshipEntities.Where
+                (objectRelationshipEntity => objectRelationshipEntity.ParentId.Equals(parentId));
+            return objectRelationshipEntities.ToList();
+        }
+        public ICollection<ObjectRelationshipEntity> SelectForChildId(long childId)
+        {
+            IQueryable<ObjectRelationshipEntity> objectRelationshipEntities = productDB.ObjectRelationshipEntities.Where
+                (objectRelationshipEntity => objectRelationshipEntity.ChildId.Equals(childId));
+            return objectRelationshipEntities.ToList();
+        }
     }
 }
