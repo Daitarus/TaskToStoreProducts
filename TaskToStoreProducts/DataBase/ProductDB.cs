@@ -8,11 +8,11 @@ using TaskToStoreProducts.DataBase.Entities;
 
 namespace TaskToStoreProducts.DataBase
 {
-    internal class ProductsDB : DB
+    internal class ProductDB : DB
     {
         public DbSet<ObjectEntity> ObjectEntity { get; set; }
         public DbSet<AttributeEntity> AttributeEntity { get; set; }
         public DbSet<ObjectRelationshipEntity> ObjectRelationshipEntity { get; set; }
-        public ProductsDB(string connectionString) : base(connectionString) { }
+        public ProductDB(string connectionString) : base(connectionString) { }
     }
 }

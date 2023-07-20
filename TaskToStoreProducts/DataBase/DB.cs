@@ -5,47 +5,32 @@ namespace TaskToStoreProducts.DataBase
 {
     public class DB : DbContext
     {
-        public readonly string connectionString;
+        public string ConnectionString { get; }
+        public bool WasCreated { get; }
 
         public DB(string connectionString)
         {
             if(String.IsNullOrEmpty(connectionString))
                 throw new ArgumentNullException(nameof(connectionString));
+            ConnectionString = connectionString;
 
-            this.connectionString = connectionString;
-            Database.EnsureCreated();
+            WasCreated = Database.EnsureCreated();
         }
         public DB(string connectionString, string createTablesScript)
         {
             if(String.IsNullOrEmpty(connectionString))
                 throw new ArgumentNullException(nameof(connectionString));
+            ConnectionString = connectionString;
 
-            this.connectionString = connectionString;
-            if (Database.EnsureCreated() && !String.IsNullOrEmpty(createTablesScript))
+            WasCreated = Database.EnsureCreated();
+
+            if (WasCreated && !String.IsNullOrEmpty(createTablesScript))
                 Database.ExecuteSqlRaw(createTablesScript);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionString);
-        }
-
-        public static bool CheckOrCreateDB(string connectionString)
-        {
-            return CheckOrCreateDB(connectionString, String.Empty);
-        }
-
-        public static bool CheckOrCreateDB(string connectionString, string createTablesScript)
-        {
-            try
-            {
-                using (new DB(connectionString, createTablesScript)) { }
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            optionsBuilder.UseSqlServer(ConnectionString);
         }
 
         public static string GetSqlScript(string fileText)

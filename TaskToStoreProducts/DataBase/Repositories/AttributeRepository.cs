@@ -9,7 +9,7 @@ namespace TaskToStoreProducts.DataBase.Repositories
 {
     internal class AttributeRepository : Repository<AttributeEntity>
     {
-        public AttributeRepository(ProductsDB dataBase) : base(dataBase) 
+        public AttributeRepository(ProductDB dataBase) : base(dataBase) 
         { 
 
         }

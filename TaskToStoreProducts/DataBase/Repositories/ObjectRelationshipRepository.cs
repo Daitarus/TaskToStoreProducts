@@ -9,6 +9,6 @@ namespace TaskToStoreProducts.DataBase.Repositories
 {
     internal class ObjectRelationshipRepository : Repository<ObjectRelationshipEntity>
     {
-        public ObjectRelationshipRepository(ProductsDB database) : base(database) { }
+        public ObjectRelationshipRepository(ProductDB database) : base(database) { }
     }
 }

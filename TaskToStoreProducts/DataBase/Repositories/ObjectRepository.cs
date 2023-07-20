@@ -9,6 +9,6 @@ namespace TaskToStoreProducts.DataBase.Repositories
 {
     internal class ObjectRepository : Repository<ObjectEntity>
     {
-        public ObjectRepository(ProductsDB dataBase) : base(dataBase) { }
+        public ObjectRepository(ProductDB dataBase) : base(dataBase) { }
     }
 }
