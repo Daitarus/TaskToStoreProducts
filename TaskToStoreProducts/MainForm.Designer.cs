@@ -879,7 +879,7 @@
             XMLConvertButton.Name = "XMLConvertButton";
             XMLConvertButton.Size = new Size(275, 30);
             XMLConvertButton.TabIndex = 4;
-            XMLConvertButton.Text = "Выгрузить структуру БД в XML";
+            XMLConvertButton.Text = "Импортировать базу данных в XML";
             XMLConvertButton.UseVisualStyleBackColor = true;
             XMLConvertButton.Click += XMLConvertButton_Click;
             // 
