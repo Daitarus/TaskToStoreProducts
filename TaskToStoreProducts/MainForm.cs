@@ -46,12 +46,20 @@ namespace TaskToStoreFactoryProducts
 
         private void MainForm_FromClosing(object sender, FormClosingEventArgs e)
         {
-            dbBehavior.Dispose();
+            dbBehavior.DisposeDataBase();
         }
 
         private void OutputDataButton_Click(object sender, EventArgs e)
         {
+            SelectBehavior selectBehavior = new SelectBehavior(dbBehavior);
+            ICollection<ObjectEntity> seniorObjectEntities;
+            selectBehavior.TrySelectSeniorObjectEntities(out seniorObjectEntities);
 
+            TreeNode[] treeNodes = selectBehavior.AddObjectEntitiesToTreeNodes(seniorObjectEntities);
+            foreach (TreeNode node in treeNodes)
+            {
+                treeView1.Nodes.Add(node);
+            }
         }
 
         private void AddEntityButton_Click(object sender, EventArgs e)
@@ -140,6 +148,12 @@ namespace TaskToStoreFactoryProducts
                         break;
                     }
             }
+        }
+
+        private void reconnectToDatabaseButton_Click(object sender, EventArgs e)
+        {
+            dbBehavior.DisposeDataBase();
+            dbBehavior.TryConnectDb();
         }
     }
 }

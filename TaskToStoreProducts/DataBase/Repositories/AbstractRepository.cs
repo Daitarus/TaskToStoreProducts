@@ -14,7 +14,7 @@ namespace TaskToStoreProducts.DataBase.Repositories
             this.database = database;
         }
 
-        public void SaveChanges()
+        public virtual void SaveChanges()
         {
             database.SaveChanges();
         }

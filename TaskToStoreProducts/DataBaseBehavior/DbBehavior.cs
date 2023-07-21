@@ -13,7 +13,7 @@ using TaskToStoreProducts.DataBase.Repositories;
 
 namespace TaskToStoreProducts.DataBaseBehavior
 {   
-    internal class DbBehavior : IDisposable
+    internal class DbBehavior
     {
         private Action<string> printSystemMessageCallback;
         public ProductDB? database { get; private set; }
@@ -113,10 +113,13 @@ namespace TaskToStoreProducts.DataBaseBehavior
             }
         }
 
-        public void Dispose()
+        public void DisposeDataBase()
         {
             if (database != null)
+            {
                 database.Dispose();
+                printSystemMessageCallback("База данных отключена...");
+            }
         }
     }
 }

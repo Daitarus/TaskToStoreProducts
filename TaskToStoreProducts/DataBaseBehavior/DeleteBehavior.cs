@@ -27,10 +27,10 @@ namespace TaskToStoreProducts.DataBaseBehavior
                 ObjectEntity? objectEntity = objectRepository.SelectForId(id);
                 if (!dbBehavior.IsEntityNullWithPrintError(objectEntity))
                 {
-                    if(TryDeleteAttributeEntitiesForObjectId(objectEntity.Id)
-                        && TryDeleteObjectRelationshipEntitiesForParetnId(objectEntity.Id)
-                        && TryDeleteObjectRelationshipEntitiesForChildId(objectEntity.Id))
-                    objectRepository.Remove(objectEntity);
+                    if(TryDeleteAttributeEntities(objectEntity.AttributeEntities)
+                        && TryDeleteObjectRelationshipEntities(objectEntity.ParentObjectRelationshipEntities)
+                        && TryDeleteObjectRelationshipEntities(objectEntity.ChildObjectRelationshipEntities))
+                    objectRepository.Delete(objectEntity);
                     return dbBehavior.TrySaveChangeIntoDB(objectRepository);
                 }
             }
@@ -46,7 +46,7 @@ namespace TaskToStoreProducts.DataBaseBehavior
                 AttributeEntity? attributeEntity = attributeRepository.SelectForId(id);
                 if (!dbBehavior.IsEntityNullWithPrintError(attributeEntity))
                 {
-                    attributeRepository.Remove(attributeEntity);
+                    attributeRepository.Delete(attributeEntity);
                     return dbBehavior.TrySaveChangeIntoDB(attributeRepository);
                 }
             }
@@ -62,40 +62,28 @@ namespace TaskToStoreProducts.DataBaseBehavior
                 ObjectRelationshipEntity? objectRelationshipEntity = objectRelationshipRepository.SelectForId(id);
                 if (!dbBehavior.IsEntityNullWithPrintError(objectRelationshipEntity))
                 {
-                    objectRelationshipRepository.Remove(objectRelationshipEntity);
+                    objectRelationshipRepository.Delete(objectRelationshipEntity);
                     return dbBehavior.TrySaveChangeIntoDB(objectRelationshipRepository);
                 }
             }
             return false;
         }
 
-        private bool TryDeleteAttributeEntitiesForObjectId(long objectId)
+        private bool TryDeleteAttributeEntities(ICollection<AttributeEntity> attributeEntities)
         {
             AttributeRepository attributeRepository = new AttributeRepository(dbBehavior.database);
-            ICollection<AttributeEntity> attributeEntities = attributeRepository.SelectForObjectId(objectId);
             foreach (AttributeEntity attributeEntity in attributeEntities)
             {
-                attributeRepository.Remove(attributeEntity);
+                attributeRepository.Delete(attributeEntity);
             }
             return dbBehavior.TrySaveChangeIntoDB(attributeRepository);
         }
-        private bool TryDeleteObjectRelationshipEntitiesForParetnId(long parentId)
+        private bool TryDeleteObjectRelationshipEntities(ICollection<ObjectRelationshipEntity> objectRelationshipEntities)
         {
-            ObjectRelationshipRepository objectRelationshipRepository = new ObjectRelationshipRepository(dbBehavior.database);
-            ICollection<ObjectRelationshipEntity> objectRelationshipEntities = objectRelationshipRepository.SelectForParentId(parentId);
+            ObjectRelationshipRepository objectRelationshipRepository = new ObjectRelationshipRepository(dbBehavior.database);           
             foreach(ObjectRelationshipEntity objectRelationshipEntity in objectRelationshipEntities)
             {
-                objectRelationshipRepository.Remove(objectRelationshipEntity);
-            }
-            return dbBehavior.TrySaveChangeIntoDB(objectRelationshipRepository);
-        }
-        private bool TryDeleteObjectRelationshipEntitiesForChildId(long childId)
-        {
-            ObjectRelationshipRepository objectRelationshipRepository = new ObjectRelationshipRepository(dbBehavior.database);
-            ICollection<ObjectRelationshipEntity> objectRelationshipEntities = objectRelationshipRepository.SelectForChildId(childId);
-            foreach (ObjectRelationshipEntity objectRelationshipEntity in objectRelationshipEntities)
-            {
-                objectRelationshipRepository.Remove(objectRelationshipEntity);
+                objectRelationshipRepository.Delete(objectRelationshipEntity);
             }
             return dbBehavior.TrySaveChangeIntoDB(objectRelationshipRepository);
         }

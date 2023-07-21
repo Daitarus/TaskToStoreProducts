@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,5 +26,8 @@ namespace TaskToStoreProducts.DataBase.Entities
         public ICollection<ObjectRelationshipEntity> ParentObjectRelationshipEntities { get; set; }
 
         public ICollection<ObjectRelationshipEntity> ChildObjectRelationshipEntities { get; set; }
+
+        [NotMapped]
+        public ICollection<ObjectEntity> ChildObjectEntities { get; set; }
     }
 }
