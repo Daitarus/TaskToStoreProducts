@@ -104,7 +104,7 @@
             label1 = new Label();
             XMLConvertButton = new Button();
             systemMessageTextBox = new TextBox();
-            reconnectToDatabaseButton = new Button();
+            ReconnectToDatabaseButton = new Button();
             dbFunctionTabControl.SuspendLayout();
             addTabPage.SuspendLayout();
             entitiesAddTabControl.SuspendLayout();
@@ -879,8 +879,9 @@
             XMLConvertButton.Name = "XMLConvertButton";
             XMLConvertButton.Size = new Size(275, 30);
             XMLConvertButton.TabIndex = 4;
-            XMLConvertButton.Text = "Выгрузить в XML";
+            XMLConvertButton.Text = "Выгрузить структуру БД в XML";
             XMLConvertButton.UseVisualStyleBackColor = true;
+            XMLConvertButton.Click += XMLConvertButton_Click;
             // 
             // systemMessageTextBox
             // 
@@ -892,22 +893,22 @@
             systemMessageTextBox.Size = new Size(587, 88);
             systemMessageTextBox.TabIndex = 5;
             // 
-            // reconnectToDatabaseButton
+            // ReconnectToDatabaseButton
             // 
-            reconnectToDatabaseButton.Location = new Point(582, 697);
-            reconnectToDatabaseButton.Name = "reconnectToDatabaseButton";
-            reconnectToDatabaseButton.Size = new Size(587, 30);
-            reconnectToDatabaseButton.TabIndex = 6;
-            reconnectToDatabaseButton.Text = "Переподключится к базе данных";
-            reconnectToDatabaseButton.UseVisualStyleBackColor = true;
-            reconnectToDatabaseButton.Click += reconnectToDatabaseButton_Click;
+            ReconnectToDatabaseButton.Location = new Point(582, 697);
+            ReconnectToDatabaseButton.Name = "ReconnectToDatabaseButton";
+            ReconnectToDatabaseButton.Size = new Size(587, 30);
+            ReconnectToDatabaseButton.TabIndex = 6;
+            ReconnectToDatabaseButton.Text = "Переподключится к базе данных";
+            ReconnectToDatabaseButton.UseVisualStyleBackColor = true;
+            ReconnectToDatabaseButton.Click += ReconnectToDatabaseButton_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1181, 739);
-            Controls.Add(reconnectToDatabaseButton);
+            Controls.Add(ReconnectToDatabaseButton);
             Controls.Add(systemMessageTextBox);
             Controls.Add(XMLConvertButton);
             Controls.Add(label1);
@@ -1029,6 +1030,6 @@
         private Label idAttributeDeleteLabel;
         private TextBox idObjectRelationshipDeleteTextBox;
         private Label idObjectRelationshipDeleteLabel;
-        private Button reconnectToDatabaseButton;
+        private Button ReconnectToDatabaseButton;
     }
 }

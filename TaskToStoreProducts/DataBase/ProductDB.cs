@@ -11,9 +11,9 @@ namespace TaskToStoreProducts.DataBase
 {
     internal class ProductDB : DB
     {
-        public DbSet<ObjectEntity> ObjectEntities { get; set; }
-        public DbSet<AttributeEntity> AttributeEntities { get; set; }
-        public DbSet<ObjectRelationshipEntity> ObjectRelationshipEntities { get; set; }
+        public DbSet<ObjectEntity> Objects { get; set; }
+        public DbSet<AttributeEntity> Attributes { get; set; }
+        public DbSet<ObjectRelationshipEntity> ObjectRelationships { get; set; }
         public ProductDB(string connectionString) : base(connectionString) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -18,7 +18,7 @@ namespace TaskToStoreProducts.DataBase.Repositories
 
         public ICollection<AttributeEntity> SelectForObjectId(long objectId)
         {
-            IQueryable<AttributeEntity> attributeEntities = productDB.AttributeEntities.Where
+            IQueryable<AttributeEntity> attributeEntities = productDB.Attributes.Where
                 (attributeEntity => attributeEntity.ObjectId.Equals(objectId));
             return attributeEntities.ToList();
         }

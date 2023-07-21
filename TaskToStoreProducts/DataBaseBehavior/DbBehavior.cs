@@ -41,6 +41,54 @@ namespace TaskToStoreProducts.DataBaseBehavior
             printSystemMessageCallback("Ошибка: База данных не подключена!");
             return false;
         }
+        public bool TryConvertDatabaseToXML()
+        {
+            string connectionString, fileName;
+            if (TryGetConnectionString("ConnectionString", out connectionString) && TryGetFileName("XmlFileName", out fileName))
+            {
+                string sqlSqript1 = $"select * from {nameof(database.Objects)} for xml auto";
+                string sqlSqript2 = $"select * from {nameof(database.Attributes)} for xml auto";
+                string sqlSqript3 = $"select * from {nameof(database.ObjectRelationships)} for xml auto";
+                string xml;
+                if (TryGetXMLFromDataBase(connectionString, out xml, sqlSqript1, sqlSqript2, sqlSqript3))
+                {
+                    File.WriteAllText(fileName, xml);
+                    printSystemMessageCallback("XML базы данных записан в файла...");
+                }
+            }
+            return false;
+        }
+
+        private bool TryGetXMLFromDataBase(string connectionString, out string xml, params string[] sqlScripts)
+        {
+            xml = string.Empty;
+            try
+            {
+                xml = GetXMLFromDataBase(connectionString, sqlScripts);
+                printSystemMessageCallback("XML базы данных получен...");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        private string GetXMLFromDataBase(string connectionString, params string[] sqlScripts)
+        {
+            string xml = string.Empty;
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
+            foreach (string sqlScript in sqlScripts)
+            {
+                using (SqlCommand cmd = new SqlCommand(sqlScript, sqlConnection))
+                {
+                    xml += (string)cmd.ExecuteScalar();
+                    xml += "\r\n";
+                }
+            }
+            sqlConnection.Close();
+            return xml;
+        }
 
         private bool TryGetConnectionString(string key, out string? connectionString)
         {
@@ -50,6 +98,16 @@ namespace TaskToStoreProducts.DataBaseBehavior
                 printSystemMessageCallback("Строка подключения к базе данных успешно получена из конфигурационного файла..."); 
             else
                 printSystemMessageCallback("Ошибка: Строка для подключения к базе данных не получена из конфигурационного файла!");
+            return result;
+        }
+        private bool TryGetFileName(string key, out string? fileName)
+        {
+            fileName = ConfigurationManager.AppSettings[key];
+            bool result = !String.IsNullOrEmpty(fileName);
+            if(result)
+                printSystemMessageCallback("Имя файла было получено из конфигурационного файла...");
+            else
+                printSystemMessageCallback("Ошибка: Имя файла не получено из конфигурационного файла!");
             return result;
         }
 

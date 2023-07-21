@@ -150,10 +150,15 @@ namespace TaskToStoreFactoryProducts
             }
         }
 
-        private void reconnectToDatabaseButton_Click(object sender, EventArgs e)
+        private void ReconnectToDatabaseButton_Click(object sender, EventArgs e)
         {
             dbBehavior.DisposeDataBase();
             dbBehavior.TryConnectDb();
+        }
+
+        private void XMLConvertButton_Click(object sender, EventArgs e)
+        {
+            dbBehavior.TryConvertDatabaseToXML();
         }
     }
 }
